@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        personConsumer-in-0:
+          destination: person.create
+          group: person.create.request
+server:
+  port: 0

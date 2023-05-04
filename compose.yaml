@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  producer-db:
+    image: bitnami/postgresql
+    restart: always
+    environment:
+      - POSTGRES_DB=producer-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+  consumer-db:
+    image: mongo:6.0.5-jammy
+    ports:
+      - '27017:27017'
+  rabbitmq:
+    image: rabbitmq:3.11.14-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - '5672:5672'
+      - '15672:15672'
