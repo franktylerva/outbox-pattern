@@ -1,0 +1,3 @@
+rootProject.name = 'outbox-pattern'
+include 'consumer'
+include 'producer'
